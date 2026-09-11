@@ -1,0 +1,6 @@
+{
+  "name": "OMR Exam App",
+  "description": "Interactive OMR answer sheet, live exam timer, dynamic question builder, answer key evaluator, and detailed test performance analytics.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
