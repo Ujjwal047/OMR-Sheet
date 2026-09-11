@@ -28,6 +28,9 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
+      - name: Accept Android Licenses
+        run: yes | sdkmanager --licenses || true
+
       - name: Install Dependencies
         run: npm install
 
@@ -45,7 +48,7 @@ jobs:
         run: |
           cd android
           chmod +x ./gradlew
-          ./gradlew assembleDebug
+          ./gradlew assembleDebug --stacktrace -Dorg.gradle.jvmargs="-Xmx2048m -XX:MaxMetaspaceSize=512m"
 
       - name: Upload APK as Artifact (For Manual Runs)
         uses: actions/upload-artifact@v4
